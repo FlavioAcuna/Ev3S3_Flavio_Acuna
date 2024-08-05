@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva de Asientos</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="my-4 text-center">Reserva de asientos</h1>
+      <div class="mb-3 row">
+        <!-- Asiento Normal -->
+        <div class="col-md-4 col-sm-12">
+          <div class="card mb-4">
+            <img
+              src="./asset/img/images.png"
+              class="card-img-top"
+              alt="Asiento-Normal"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Asiento normal</h5>
+              <p class="card-text">Precio: $5.000</p>
+              <div class="input-group mb-3">
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('normal', -1)"
+                >
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  id="normalCount"
+                  value="0"
+                  readonly
+                />
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('normal', 1)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asiento Preferencial -->
+        <div class="col-md-4 col-sm-12">
+          <div class="card mb-4">
+            <img
+              src="./asset/img/images.png"
+              class="card-img-top"
+              alt="Asiento-Preferencial"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Asiento preferencial</h5>
+              <p class="card-text">Precio: $9.000</p>
+              <div class="input-group mb-3">
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('preferencial', -1)"
+                >
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  id="preferencialCount"
+                  value="0"
+                  readonly
+                />
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('preferencial', 1)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Asiento VIP -->
+        <div class="col-md-4 col-sm-12">
+          <div class="card mb-4">
+            <img
+              src="./asset/img/images.png"
+              class="card-img-top"
+              alt="Asiento-Vip"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Asiento VIP</h5>
+              <p class="card-text">Precio: $13.000</p>
+              <div class="input-group mb-3">
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('vip', -1)"
+                >
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="form-control text-center"
+                  id="vipCount"
+                  value="0"
+                  readonly
+                />
+                <button
+                  class="btn btn-secondary"
+                  onclick="updateSeats('vip', 1)"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mostrar total -->
+      <div class="text-center">
+        <button class="btn btn-primary" onclick="calculateTotal()">
+          Calcular Total
+        </button>
+      </div>
+
+      <!-- Resultado -->
+      <div id="result" class="mt-4 text-center"></div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./asset/js/app.js"></script>
+  </body>
+</html>
